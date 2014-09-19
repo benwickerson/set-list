@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tune: MyString
+  vocal: false
+  key: MyString
+
+two:
+  tune: MyString
+  vocal: false
+  key: MyString

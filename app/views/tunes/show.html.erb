@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tune:</strong>
+  <%= @tune.tune %>
+</p>
+
+<p>
+  <strong>Vocal:</strong>
+  <%= @tune.vocal %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @tune.key %>
+</p>
+
+<%= link_to 'Edit', edit_tune_path(@tune) %> |
+<%= link_to 'Back', tunes_path %>
