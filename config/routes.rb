@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :tunes
 
 
+  post '/add_gig_tune/:tune_id' => 'gigtunes#add_gig_tune', as: 'add_gig_tune'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

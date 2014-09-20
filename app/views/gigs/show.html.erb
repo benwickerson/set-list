@@ -13,15 +13,19 @@
   <%= @gig.gig_date %>
 </p>
 
-<p>
-  <strong>Tunes</strong>
-</p>
-<ul id="gig_tunes" data-update-url="<%= sort_gigs_url %>">
-  <% @gig_tunes.each do |gig_tune| %>
-    <%= content_tag_for :li, gig_tune do %>
-      <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune  %>
-    <% end %>
-  <% end %>
-</ul>
+<div class="col-md-4">
+  <p>
+    <strong>Tunes</strong>
+  </p>
 
+  <ul id="gig_tunes" class="list-group" data-update-url="<%= sort_gigs_url %>">
+    <% @gig_tunes.each do |gig_tune| %>
+      <%= content_tag_for :li, gig_tune, class: "list-group-item" do %>
+        <span class="glyphicon glyphicon-resize-vertical"></span>
+        <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune  %>
+      <% end %>
+    <% end %>
+    <li class="list-group-item"><%= link_to "Add tune to gig", root_path %>
+  </ul>
+</div>
 

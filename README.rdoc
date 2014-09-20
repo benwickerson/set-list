@@ -1,28 +1,14 @@
-== README
+== Set-List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A quick and dirty little set-list management app for my band.  Should include
+* ability to add tunes to a set-list
 
-Things you may want to cover:
+* sort the set list into a desired order
 
-* Ruby version
+* add new tunes (inc PDF or image of sheet music)
 
-* System dependencies
+* make notes both on the tune in general and/or gig-specific notes on each tune
 
-* Configuration
+* track rehersals with notes etc
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* stats on popular tunes/times rehersed etc
