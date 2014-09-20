@@ -1,14 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h1>
   <strong>Gig:</strong>
   <%= @gig.gig %>
-</p>
-
-<p>
-  <strong>Gig date:</strong>
-  <%= @gig.gig_date %>
-</p>
+</h1>
 
 <%= link_to 'Edit', edit_gig_path(@gig) %> |
 <%= link_to 'Back', gigs_path %>
+
+<p>
+  <strong>Date:</strong>
+  <%= @gig.gig_date %>
+</p>
+
+<p>
+  <strong>Tunes</strong>
+</p>
+<ul id="gig_tunes" data-update-url="<%= sort_gigs_url %>">
+  <% @gig_tunes.each do |gig_tune| %>
+    <%= content_tag_for :li, gig_tune do %>
+      <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune  %>
+    <% end %>
+  <% end %>
+</ul>
+
+

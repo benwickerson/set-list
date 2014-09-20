@@ -1,11 +1,9 @@
 # == Schema Information
 #
-# Table name: tunes
+# Table name: rehersals
 #
 #  id         :integer          not null, primary key
-#  tune       :string(255)
-#  vocal      :boolean
-#  key        :string(255)
+#  rehersal   :date
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -13,11 +11,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tune: MyString
-  vocal: false
-  key: MyString
+  rehersal: 2014-09-19
 
 two:
-  tune: MyString
-  vocal: false
-  key: MyString
+  rehersal: 2014-09-19

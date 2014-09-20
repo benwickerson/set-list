@@ -11,11 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918102341) do
+ActiveRecord::Schema.define(version: 20140919234450) do
+
+  create_table "gig_tunes", force: true do |t|
+    t.integer  "gig_id"
+    t.integer  "tune_id"
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "position"
+  end
 
   create_table "gigs", force: true do |t|
     t.string   "gig"
     t.date     "gig_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rehersal_tunes", force: true do |t|
+    t.integer  "rehersal_id"
+    t.integer  "tune_id"
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rehersals", force: true do |t|
+    t.date     "rehersal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

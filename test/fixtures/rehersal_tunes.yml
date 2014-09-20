@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: rehersal_tunes
+#
+#  id          :integer          not null, primary key
+#  rehersal_id :integer
+#  tune_id     :integer
+#  notes       :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rehersal_id: 1
+  tune_id: 1
+  notes: MyString
+
+two:
+  rehersal_id: 1
+  tune_id: 1
+  notes: MyString

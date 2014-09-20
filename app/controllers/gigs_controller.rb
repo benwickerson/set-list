@@ -1,28 +1,29 @@
 class GigsController < ApplicationController
   before_action :set_gig, only: [:show, :edit, :update, :destroy]
 
-  # GET /gigs
-  # GET /gigs.json
   def index
     @gigs = Gig.all
   end
 
-  # GET /gigs/1
-  # GET /gigs/1.json
   def show
+    @gig_tunes = @gig.gig_tunes.order('position ASC')
   end
 
-  # GET /gigs/new
+  def sort
+    params[:gig_tune].each_with_index do |id, index|
+      tune = GigTune.find_by(id: id)
+      tune.update(position: index+1)
+    end
+    render nothing: true
+  end
+
   def new
     @gig = Gig.new
   end
 
-  # GET /gigs/1/edit
   def edit
   end
 
-  # POST /gigs
-  # POST /gigs.json
   def create
     @gig = Gig.new(gig_params)
 
@@ -37,8 +38,6 @@ class GigsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /gigs/1
-  # PATCH/PUT /gigs/1.json
   def update
     respond_to do |format|
       if @gig.update(gig_params)
@@ -71,4 +70,5 @@ class GigsController < ApplicationController
     def gig_params
       params.require(:gig).permit(:gig, :gig_date)
     end
+
 end

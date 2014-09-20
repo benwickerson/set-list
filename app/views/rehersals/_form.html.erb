@@ -1,0 +1,21 @@
+<%= form_for(@rehersal) do |f| %>
+  <% if @rehersal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rehersal.errors.count, "error") %> prohibited this rehersal from being saved:</h2>
+
+      <ul>
+      <% @rehersal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rehersal %><br>
+    <%= f.date_select :rehersal %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

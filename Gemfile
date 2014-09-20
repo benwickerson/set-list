@@ -14,3 +14,4 @@ gem 'spring',        group: :development
 
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass'
+gem 'annotate'

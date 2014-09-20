@@ -1,11 +1,11 @@
 # == Schema Information
 #
-# Table name: tunes
+# Table name: gig_tunes
 #
 #  id         :integer          not null, primary key
-#  tune       :string(255)
-#  vocal      :boolean
-#  key        :string(255)
+#  gig_id     :integer
+#  tune_id    :integer
+#  notes      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -13,11 +13,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tune: MyString
-  vocal: false
-  key: MyString
+  gig_id: 1
+  tune_id: 1
+  notes: MyString
 
 two:
-  tune: MyString
-  vocal: false
-  key: MyString
+  gig_id: 1
+  tune_id: 1
+  notes: MyString
