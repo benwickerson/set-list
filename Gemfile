@@ -15,6 +15,7 @@ gem 'spring',               group: :development
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass'
 gem 'annotate'
+gem 'touchpunch-rails'
 
 group :production do
   gem 'pg'
