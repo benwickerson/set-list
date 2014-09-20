@@ -1,7 +1,14 @@
 class GigtunesController < ApplicationController
-  before_action :set_gig_tune, only: [:show, :edit, :update, :destroy]
+  before_action :set_gigtune, only: [:show, :edit, :update, :destroy]
 
-  def add_gig_tune
+  def create
+    @gigtune = GigTune.new(gigtune_params)
+    if @gigtune.save
+      redirect_to :back
+    else
+      redirect_to :back
+    end
+
   end
 
   def destroy
@@ -12,9 +19,13 @@ class GigtunesController < ApplicationController
 
   private
 
-    def set_gig_tune
+    def set_gigtune
       @gigtune = GigTune.find(params[:id])
       @gig = @gigtune.gig
+    end
+
+    def gigtune_params
+      params.require(:gig_tune).permit(:gig_id, :tune_id)
     end
 
 end

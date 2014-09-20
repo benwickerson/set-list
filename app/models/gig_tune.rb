@@ -15,4 +15,7 @@ class GigTune < ActiveRecord::Base
   belongs_to :gig
   belongs_to :tune
 
+  validates :gig_id, presence: true
+  validates :tune_id, presence: true
+
 end

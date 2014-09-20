@@ -7,6 +7,7 @@ class GigsController < ApplicationController
 
   def show
     @gig_tunes = @gig.gig_tunes.order('position ASC')
+    @gigtune = GigTune.new(gig_id: @gig.id)
   end
 
   def sort

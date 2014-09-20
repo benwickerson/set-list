@@ -13,21 +13,35 @@
   <%= @gig.gig_date %>
 </p>
 
-<div class="col-md-4">
-  <p>
-    <strong>Tunes</strong>
-  </p>
+<p>
+  <strong>Tunes</strong>
+</p>
 
-  <ul id="gig_tunes" class="list-group" data-update-url="<%= sort_gigs_url %>">
-    <% @gig_tunes.each do |gig_tune| %>
-      <%= content_tag_for :li, gig_tune, class: "list-group-item" do %>
-        <span class="glyphicon glyphicon-resize-vertical"></span>
-        <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune  %>
-        <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span>'.html_safe, 
-          gigtune_path(id: gig_tune.id), method: :delete, class: "pull-right", title: "Remote #{gig_tune.tune.tune}" %>
+<div class="row">
+  <div class="col-md-4">
+    <ul id="gig_tunes" class="list-group" data-update-url="<%= sort_gigs_url %>">
+      <% @gig_tunes.each do |gig_tune| %>
+        <%= content_tag_for :li, gig_tune, class: "list-group-item" do %>
+          <span class="glyphicon glyphicon-resize-vertical"></span>
+          <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune  %>
+          <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span>'.html_safe, 
+            gigtune_path(id: gig_tune.id), method: :delete, class: "pull-right", title: "Remote #{gig_tune.tune.tune}" %>
+        <% end %>
       <% end %>
-    <% end %>
-    <li class="list-group-item"><%= link_to "Add tune to gig", root_path %>
-  </ul>
+    </ul>
+  </div>
 </div>
 
+<div class="row">
+  <div class="col-md-4">
+  <%= form_for @gigtune, url: gigtunes_path do |f| %>
+    <%= f.hidden_field :gig_id, value: @gig.id %>
+    <div class="field">
+    <%= f.collection_select(:tune_id, Tune.all, :id, :tune, options={prompt: "Select tune to add"}) %>
+    </div>
+    <div class="actions">
+    <%= f.submit "Add" %>
+    </div>
+  <% end %>
+  </div>
+</div>
