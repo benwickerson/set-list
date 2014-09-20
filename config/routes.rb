@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :tunes
 
+  resources :gigtunes
+
 
   post '/add_gig_tune/:tune_id' => 'gigtunes#add_gig_tune', as: 'add_gig_tune'
 

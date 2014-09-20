@@ -23,6 +23,8 @@
       <%= content_tag_for :li, gig_tune, class: "list-group-item" do %>
         <span class="glyphicon glyphicon-resize-vertical"></span>
         <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune  %>
+        <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span>'.html_safe, 
+          gigtune_path(id: gig_tune.id), method: :delete, class: "pull-right", title: "Remote #{gig_tune.tune.tune}" %>
       <% end %>
     <% end %>
     <li class="list-group-item"><%= link_to "Add tune to gig", root_path %>
