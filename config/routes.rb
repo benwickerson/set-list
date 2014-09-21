@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'tunes#index'
+  root to: 'static#index'
   
   resources :rehersals
 
