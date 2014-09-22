@@ -16,6 +16,7 @@ gem 'jquery-ui-rails'
 gem 'bootstrap-sass'
 gem 'annotate'
 gem 'touchpunch-rails'
+gem 'font-awesome-sass'
 
 group :production do
   gem 'pg'

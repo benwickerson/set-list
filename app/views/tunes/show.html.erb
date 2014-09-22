@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tune:</strong>
-  <%= @tune.tune %>
-</p>
+<h1>
+  <strong><%= @tune.tune %></strong>
+</h1>
 
+<% if @tune.vocal %>
 <p>
-  <strong>Vocal:</strong>
-  <%= @tune.vocal %>
+  <strong>Vocal</strong>
 </p>
-
+<% end %>
 <p>
   <strong>Key:</strong>
   <%= @tune.key %>

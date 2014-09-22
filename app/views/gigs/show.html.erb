@@ -22,10 +22,9 @@
     <ul id="gig_tunes" class="list-group" data-update-url="<%= sort_gigs_url %>">
       <% @gig_tunes.each do |gig_tune| %>
         <%= content_tag_for :li, gig_tune, class: "list-group-item" do %>
-          <span class="glyphicon glyphicon-resize-vertical"></span>
-          <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune  %>
+          <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune %>
           <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span>'.html_safe, 
-            gigtune_path(id: gig_tune.id), method: :delete, class: "pull-right", title: "Remote #{gig_tune.tune.tune}" %>
+            gigtune_path(id: gig_tune.id), method: :delete, class: "pull-right", title: "Remote #{gig_tune.tune.tune}", style:"font-size: 1.5em; color: $gray-dark:" %>
         <% end %>
       <% end %>
     </ul>
@@ -37,10 +36,10 @@
   <%= form_for @gigtune, url: gigtunes_path do |f| %>
     <%= f.hidden_field :gig_id, value: @gig.id %>
     <div class="field">
-    <%= f.collection_select(:tune_id, Tune.all, :id, :tune, options={prompt: "Select tune to add"}) %>
+    <%= f.collection_select(:tune_id, Tune.all, :id, :tune, options={prompt: "Select tune to add"}, class:"form-control", style:"margin-bottom: 10px;") %>
     </div>
     <div class="actions">
-    <%= f.submit "Add" %>
+    <%= f.submit "Add", class:"form-control btn btn-primary" %>
     </div>
   <% end %>
   </div>

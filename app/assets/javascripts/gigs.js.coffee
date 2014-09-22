@@ -2,9 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
-  $('#gig_tunes').sortable(
-    axis: 'y'
-    update: ->
-      $.post($(this).data('update-url'), $(this).sortable('serialize'))
-      )
+ready = ->
+  jQuery ->
+    $('#gig_tunes').sortable(
+      axis: 'y'
+      update: ->
+        $.post($(this).data('update-url'), $(this).sortable('serialize'))
+        )
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
