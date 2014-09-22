@@ -22,9 +22,13 @@
     <ul id="gig_tunes" class="list-group" data-update-url="<%= sort_gigs_url %>">
       <% @gig_tunes.each do |gig_tune| %>
         <%= content_tag_for :li, gig_tune, class: "list-group-item" do %>
-          <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune %>
+          <% if gig_tune.tune.vocal %>
+            <%= link_to "#{gig_tune.tune.tune} (v)", gig_tune.tune %>
+          <% else %>
+            <%= link_to "#{gig_tune.tune.tune}", gig_tune.tune %>
+          <% end %>
           <%= link_to '<span class="glyphicon glyphicon-remove-circle"></span>'.html_safe, 
-            gigtune_path(id: gig_tune.id), method: :delete, class: "pull-right", title: "Remote #{gig_tune.tune.tune}", style:"font-size: 1.5em; color: $gray-dark:" %>
+            gigtune_path(id: gig_tune.id), method: :delete, class: "pull-right", title: "Remove #{gig_tune.tune.tune}", style:"font-size: 1.5em; color: $gray-dark:" %>
         <% end %>
       <% end %>
     </ul>
