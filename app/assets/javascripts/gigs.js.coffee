@@ -6,7 +6,7 @@ ready = ->
   jQuery ->
     $('#gig_tunes').sortable(
       axis: 'y'
-      delay: 250
+      delay: 750
       start: (event, ui)->
       update: ->
         $.post($(this).data('update-url'), $(this).sortable('serialize'))
