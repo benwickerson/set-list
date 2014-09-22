@@ -21,11 +21,11 @@ $border-radius-base: 0;
 
 html {
   overflow-y: scroll;
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 section {
@@ -96,34 +96,16 @@ p {
 
 /* footer */
 
-footer {
-  background-color: white;
+.footer {
   position: fixed;
-  bottom: 0%;
+  bottom: 0;
   width: 100%;
-  margin-top: 45px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover { 
-      color: $gray-darker;
-    }
-  }  
-  small { 
-    float: left;
-    margin-left: 10px; 
-  }
-  ul {
-    float: right;
-    list-style: none;
-    margin-right: 10px;
-    li {
-      float: left;
-      margin-left: 10px;
-    }
-  }
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #f5f5f5;
 }
+
+
 
 /* miscellaneous */
 
@@ -135,23 +117,20 @@ footer {
 }
 
 /* Jumbotron */
-.jumbotron {
-  background-image: url("images/music.jpg");
-  background-position: center;
-  height: 800px;
-  opacity: 40%;
+.jumbo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   .container {
     h1 {
       color: $gray-darker;
-      text-shadow: black 0.3em 0.3em 0.3em;
       font-variant: small-caps;
       letter-spacing: 3px;
     }
     h2 {
       color: $gray-darker;
-    }
-    .btn {
-      margin: auto;
     }
   }
 }

@@ -1,12 +1,16 @@
 </div>
 
-<div class="jumbotron">
+<div class="jumbo">
+  <div class="container" style="margin-bottom: 30px;">
+    <h1><strong>Set:List</strong><br>
+    <small style="color: #808080;">Sort your set out</small></h1>
+  </div>
   <div class="container">
-    <h1><strong>Set:List</strong></h1>
-    <h2>Sort your set out</h2>
-    <div class="center-p">
-      <%= link_to 'Tunes', tunes_path, class: "btn btn-default btn-large center-p" %>
-      <%= link_to 'Gigs', gigs_path, class: "btn btn-default btn-large center-p" %>
+    <div style="margin-bottom: 10px;">
+      <%= link_to 'Tunes', tunes_path, class: "btn btn-default btn-large btn-block" %>
+    </div>
+    <div>
+      <%= link_to 'Gigs', gigs_path, class: "btn btn-default btn-large btn-block" %>
     </div>
   </div>
 </div>
