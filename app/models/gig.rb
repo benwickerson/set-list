@@ -12,5 +12,6 @@
 class Gig < ActiveRecord::Base
   has_many :gig_tunes
   has_many :tunes, through: :gig_tunes
+  has_many :notes, as: :link
 
 end

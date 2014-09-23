@@ -10,6 +10,7 @@ class TunesController < ApplicationController
   # GET /tunes/1
   # GET /tunes/1.json
   def show
+    @new_note = Note.new()
   end
 
   # GET /tunes/new

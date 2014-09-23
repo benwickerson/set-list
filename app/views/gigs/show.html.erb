@@ -13,6 +13,13 @@
   <%= @gig.gig_date %>
 </p>
 
+<% if @gig.notes %>
+  <% @gig.notes.each do |note| %>
+    <p><%= note.title %></p>
+    <p><%= note.text %></p>
+  <% end %>
+<% end %>
+
 <p>
   <strong>Tunes</strong>
 </p>

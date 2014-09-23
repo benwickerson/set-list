@@ -13,5 +13,6 @@
 class Tune < ActiveRecord::Base
   has_many :gigs, through: :gig_tunes
   has_many :rehersals, through: :rehersal_tunes
+  has_many :notes, as: :link
 
 end
