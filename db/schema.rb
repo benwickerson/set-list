@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923113158) do
+ActiveRecord::Schema.define(version: 20140928072629) do
+
+  create_table "documents", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gig_tunes", force: true do |t|
     t.integer  "gig_id"
@@ -63,6 +68,12 @@ ActiveRecord::Schema.define(version: 20140923113158) do
     t.string   "tune"
     t.boolean  "vocal"
     t.string   "key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "videos", force: true do |t|
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

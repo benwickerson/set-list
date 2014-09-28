@@ -16,8 +16,13 @@ gem 'jquery-ui-rails'
 gem 'bootstrap-sass'
 gem 'annotate'
 gem 'touchpunch-rails'
-gem 'font-awesome-sass'
+gem 'youtube_search'
+gem 'aws-sdk'
+gem 'paperclip'
+gem 'rmagick'
+gem 'youtube_addy'
 
 group :production do
   gem 'pg'
+
 end

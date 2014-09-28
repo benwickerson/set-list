@@ -1,0 +1,18 @@
+<h1>Videos</h1>
+
+<div>
+  <%= form_for @video do |f| %>
+  <%= f.text_field :url, class: "form-control", value: "Enter YouTube URL here:", style: "margin-bottom: 10px;" %>
+  <%= f.submit 'Add Video', class: "btn btn-primary form-control" %>
+  <% end %>
+</div>  
+<hr>
+
+
+<% @videos.each do |video| %>
+<div class="video-container">
+  <%= embed_yt(video.url) %>
+</div>
+  <%= link_to 'Remove', video_path(id: video.id), method: :delete, class: "btn btn-danger" %>
+<hr>
+<% end %>
