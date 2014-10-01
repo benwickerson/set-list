@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928072629) do
+ActiveRecord::Schema.define(version: 20141001231408) do
 
   create_table "documents", force: true do |t|
     t.datetime "created_at"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140928072629) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.integer  "set"
   end
 
   create_table "gigs", force: true do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140928072629) do
     t.date     "gig_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sets"
   end
 
   create_table "notes", force: true do |t|
@@ -64,6 +66,19 @@ ActiveRecord::Schema.define(version: 20140928072629) do
     t.datetime "updated_at"
   end
 
+  create_table "tags", force: true do |t|
+    t.string   "tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tune_tags", force: true do |t|
+    t.integer  "tune_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tunes", force: true do |t|
     t.string   "tune"
     t.boolean  "vocal"
@@ -76,6 +91,7 @@ ActiveRecord::Schema.define(version: 20140928072629) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "comment"
   end
 
 end

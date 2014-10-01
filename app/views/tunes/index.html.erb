@@ -6,20 +6,21 @@
   <thead>
     <tr>
       <th>Tune</th>
-      <th>Vocal</th>
       <th>Key</th>
-      <th colspan="2"></th>
+      <th>Edit</th>
     </tr>
   </thead>
 
   <tbody>
     <% @tunes.each do |tune| %>
       <tr>
+        <% if tune.vocal == true   %>
+        <td><%= link_to "#{tune.tune} (v)", tune %></td>
+        <% else %>
         <td><%= link_to "#{tune.tune}", tune %></td>
-        <td><%= tune.vocal %></td>
+        <% end %>
         <td><%= tune.key %></td>
         <td><%= link_to 'Edit', edit_tune_path(tune) %></td>
-        <td><%= link_to 'Destroy', tune, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

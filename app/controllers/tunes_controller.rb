@@ -4,7 +4,7 @@ class TunesController < ApplicationController
   # GET /tunes
   # GET /tunes.json
   def index
-    @tunes = Tune.all
+    @tunes = Tune.all.order(:tune)
   end
 
   # GET /tunes/1

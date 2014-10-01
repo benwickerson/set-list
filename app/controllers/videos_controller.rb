@@ -24,7 +24,7 @@ class VideosController < ApplicationController
   private
 
     def video_params
-      params.require(:video).permit(:url)
+      params.require(:video).permit(:url, :comment)
     end
 
 end

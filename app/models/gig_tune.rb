@@ -9,6 +9,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  position   :integer
+#  set        :integer
 #
 
 class GigTune < ActiveRecord::Base

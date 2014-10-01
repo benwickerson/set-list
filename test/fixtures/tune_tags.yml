@@ -1,25 +1,20 @@
 # == Schema Information
 #
-# Table name: gig_tunes
+# Table name: tune_tags
 #
 #  id         :integer          not null, primary key
-#  gig_id     :integer
 #  tune_id    :integer
-#  notes      :string(255)
+#  tag_id     :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  position   :integer
-#  set        :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  gig_id: 1
   tune_id: 1
-  notes: MyString
+  tag_id: 1
 
 two:
-  gig_id: 1
   tune_id: 1
-  notes: MyString
+  tag_id: 1

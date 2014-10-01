@@ -4,14 +4,10 @@
   <strong>Gig:</strong>
   <%= @gig.gig %>
 </h1>
+<strong><%= @gig.gig_date %></strong> - 
 
-<%= link_to 'Edit', edit_gig_path(@gig) %> |
-<%= link_to 'Back', gigs_path %>
+<%= link_to 'Edit', edit_gig_path(@gig) %>
 
-<p>
-  <strong>Date:</strong>
-  <%= @gig.gig_date %>
-</p>
 
 <% if @gig.notes %>
   <% @gig.notes.each do |note| %>
@@ -19,10 +15,6 @@
     <p><%= note.text %></p>
   <% end %>
 <% end %>
-
-<p>
-  <strong>Tunes</strong>
-</p>
 
 <div class="row">
   <div class="col-md-4">
@@ -47,7 +39,7 @@
   <%= form_for @gigtune, url: gigtunes_path do |f| %>
     <%= f.hidden_field :gig_id, value: @gig.id %>
     <div class="field">
-    <%= f.collection_select(:tune_id, Tune.all, :id, :tune, options={prompt: "Select tune to add"}, class:"form-control", style:"margin-bottom: 10px;") %>
+    <%= f.collection_select(:tune_id, Tune.all, :id, :tune, options={prompt: "Select tune"}, class:"form-control", style:"margin-bottom: 10px;") %>
     </div>
     <div class="actions">
     <%= f.submit "Add", class:"form-control btn btn-primary" %>

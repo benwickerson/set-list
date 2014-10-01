@@ -1,17 +1,16 @@
 # == Schema Information
 #
-# Table name: videos
+# Table name: tags
 #
 #  id         :integer          not null, primary key
-#  url        :string(255)
+#  tag        :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  comment    :text
 #
 
 require 'test_helper'
 
-class VideoTest < ActiveSupport::TestCase
+class TagTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

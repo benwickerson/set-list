@@ -7,6 +7,7 @@
 #  gig_date   :date
 #  created_at :datetime
 #  updated_at :datetime
+#  sets       :integer
 #
 
 class Gig < ActiveRecord::Base
