@@ -2,7 +2,7 @@
 
 <div>
   <%= form_for @video do |f| %>
-  <%= f.text_field :url, class: "form-control", value: "Enter YouTube URL here:", style: "margin-bottom: 10px;" %>
+  <%= f.text_field :url, class: "form-control addurl", style: "margin-bottom: 10px;", placeholder: "Enter YouTube URL here..." %>
   <%= f.submit 'Add Video', class: "btn btn-primary form-control" %>
   <% end %>
 </div>  
@@ -10,7 +10,7 @@
 
 
 <% @videos.each do |video| %>
-<div class="video-container">
+<div id="video_<%= video.id %>" class="video-container">
   <%= embed_yt(video.url) %>
 </div>
   <%= link_to 'Remove', video_path(id: video.id), method: :delete, class: "btn btn-danger" %>
